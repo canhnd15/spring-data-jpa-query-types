@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity(name = "tbl_user")
+@NamedQuery(name = "User.findByStatusAndCity",
+        query = "SELECT u FROM tbl_user u JOIN u.address a WHERE u.status = ?1 AND a.city = ?2")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
