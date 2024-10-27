@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class SpringDataJpaQueryTypesApplicationTests {
+class QueryTypesApplicationTests {
     @Autowired
     private UserRepository userRepository;
 
