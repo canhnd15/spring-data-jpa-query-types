@@ -18,7 +18,7 @@ class QueryTypesApplicationTests {
     private UserRepository userRepository;
 
     @Test
-    void contextCriteriaQuery() {
+    void testCriteriaQuery() {
         List<User> usersByStatus = userRepository.findUsersByStatusAndCity("ACTIVE", "NewYork");
 
         assertEquals(1, usersByStatus.size(), "Expected 1 user with status ACTIVE and city is NewYork");

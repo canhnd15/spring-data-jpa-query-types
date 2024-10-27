@@ -4,11 +4,11 @@ import com.davidnguyen.querytypes.address.Address;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Service
+@Repository
 @RequiredArgsConstructor
 public class UserRepository {
     private final EntityManager entityManager;
