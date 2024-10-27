@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity(name = "tbl_user")
+@NamedEntityGraph(name = "User.detail", attributeNodes = @NamedAttributeNode("address"))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
