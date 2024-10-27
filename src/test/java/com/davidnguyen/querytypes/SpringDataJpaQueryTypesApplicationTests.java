@@ -19,7 +19,7 @@ class SpringDataJpaQueryTypesApplicationTests {
     private UserRepository userRepository;
 
     @Test
-    public void testDerivedQueryMethods() {
+    public void testUsingJpql() {
         List<User> usersByStatusAndCity = userRepository.findUsersByStatusAndCity("ACTIVE", "NewYork");
 
         assertEquals(1, usersByStatusAndCity.size(), "Expected one users with status ACTIVE and city is NewYork");
