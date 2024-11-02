@@ -1,8 +1,7 @@
 package com.davidnguyen.querytypes;
 
-import com.davidnguyen.querytypes.user.User;
+import com.davidnguyen.querytypes.user.UserProjectionDTO;
 import com.davidnguyen.querytypes.user.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -20,11 +19,9 @@ class QueryTypesApplicationTests {
 
     @Test
     public void testDerivedQueryMethods() {
-        List<User> usersByFirstNameAndCity = userRepository.findByFirstNameAndAddress_City("John", "Springfield");
-        List<User> usersByStatusAndCountry = userRepository.findByStatusAndAddress_Country("ACTIVE", "USA");
+        List<UserProjectionDTO> users = userRepository.findAllUserInfo();
 
-        assertEquals(1, usersByFirstNameAndCity.size(), "Expected one user with first name 'John' and city 'Springfield'");
-        assertEquals(2, usersByStatusAndCountry.size(), "Expected two users with status ACTIVE and country is USA");
+        assertEquals(10, users.size(), "Expected 10 users");
     }
 
 }
